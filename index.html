@@ -4,94 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARPIT GHURA | CV</title>
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/fb85170f64.js" crossorigin="anonymous"></script>
+    <title>Hey, I'm Arpit</title>
+    <!-- ----Bootstrap Css------ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <div class="landing-section  ">
-        <div class="header">
-            <h1 class="header-title">Hello This is <strong>Arpit Ghura</strong> ,
-                A Web Developer From Central India</h1>
-
-            <button> <a href="mailto:ghurarpit110@gmail.com">Get In Touch</a></button>
+    <!-- ============ Navbar ============== -->
+    <div class="container navbar d-flex justify-content-between" >
+        <div class="header-logo">
+                <a href="/index.html"><h1>ARPIT</h1></a>
         </div>
-        <img src="img/author.png" alt="author-img" class="author-img">
-        <div class="follow-me">
-            <h3> Follow On </h3>
-            <ul>
-                <li><a href="https://www.facebook.com/arpit.ghura01" target="_blank"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com/ghura.arpit" target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/arpitghura/" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://github.com/arpitghura" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://twitter.com/Arpitghura" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            </ul>
+        <div class="nav-links d-flex">
+            <a href="#" class="nav-link"><h1>Home</h1></a>
+            <a href="#" class="nav-link"><h1>Project</h1></a>
+            <a href="#" class="nav-link"><h1>Contact</h1></a>
+            <a href="#" class="nav-link startup-link"><h1>PeaBooks</h1></a>
         </div>
     </div>
-
-    <div class="About">
-        <h2>About Me</h2>
-        <div class="education">
-            <h2>> Education</h2>
-            <ul>
-                <li class="big-title">Pursuing B.Tech In CSE</li>
-                <ul>
-                    <li>2020-2024</li>
-                    <!-- <li>From LNCT Bhopal</li> -->
-                </ul>
-                <li class="big-title">12th (PCM)</li>
-                <ul>
-                    <li>2018-2019</li>
-                </ul>
-            </ul>
+    <!-- ============ Navbar code ends ============== -->
+    <!-- ============ Hero Section ============== -->
+    <div class="container d-flex" id="hero">
+        <div class="col-6">
+            <img src="/img/author.png" alt="arpit-photo" class="w-100">
         </div>
-    </div>
-    <div class="skills">
-        <h2 class="skills-heading">SKILLS</h2>
-        <ul>
-            <li> HTML</li>
-            <li>CSS</li>
-            <li>JAVASCRIPT</li>
-            <li>C++</li>
-        </ul>
-    </div>
+        <div class="col-md hero-details">
+            <h1>Hi,</h1>
+            <h2>I'm <span class="text-green">Arpit Ghura</span></h2>
+            <h3>Front-End Dev | Startup Enthusiasts</h3>
+            <p>Fascinate Front-End Developer</p>
 
-    <div class="project">
-        <div class="title">
-            <h2 class="project-head-title ">PROJECTS</h2>
-        </div>
-        <div class="project-flex">
-            <div class="project-details">
-                <div class="Project-title">
-                    <img src="img/yt-ui-design.png" alt="">
-                    <h2>YouTube HomePage UI Design</h2>
-                    <p>Using HTML & CSS </p>
-                    <div class="project-link">
-                        <a href="https://github.com/arpitghura/projects">Project Link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-details">
-                <div class="Project-title">
-                    <img src="img/portfolio.png" alt="">
-                    <h2>My PortFolio Website</h2>
-                    <p>Using HTML & CSS </p>
-                    <div class="project-link">
-                        <a href="https://github.com/arpitghura/Portfolio">Project Link</a>
-                    </div>
-                </div>
+            <img class="d-flex social-handles">
+                <a href="https://www.facebook.com/arpitghura.01" class="social-link"><img src="/img/facebook icon 50x50.jpg" alt="facebook"></a>
+                <a href="https://www.instagram.com/ghura.arpit" class="social-link"><img src="/img/Instagram Icon.jpg" alt="instagram"></a>
+                <a href="https://www.twitter.com/arpitghura" class="social-link"><img src="/img/twitter icon 50 x 50.jpg" alt="twitter"></a>
+                <a href="https://www.linkedin.com/in/arpitghura" class="social-link"><img src="/img/linkedin icon.jpg" alt="linkedin"></a>
+                <a href="https://www.github.com/arpitghura" class="social-link"><img src="/img/GitHub-Mark-64px.png" height="50px" alt="github"></a>
             </div>
         </div>
     </div>
-
-    <footer>
-        <p>Made With &#10084;&#65039; By Arpit In <img src="img/Flag_of_India.svg" height="22px" width="20px" alt=""> </p>
-    </footer>
+    <!-- ============ Hero section ended ============== -->
+    <!-- ============ Skills Section ============== -->
+    <div class="container skills-list">
+        <div class="skills">
+            <p>HTML</p>
+            <progress value= "65" max = "100">
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>
