@@ -5,10 +5,10 @@ body{
 .text-green{
     color: rgba(14,174,87,1);
 }
+
 /* =========================NavBar======================= */
 .navbar{
     margin-top: 1pc;
-    margin-bottom: 2pc;
 }
 .header-logo{
     margin-top: 10px;
@@ -43,8 +43,10 @@ body{
 /* ============================Hero section code ============================= */
 #hero{
     background-color: white;
-    border-radius: 2pc;
-    padding: 5pc 2pc;
+    border-radius: 3pc;
+    padding: 2pc;
+    position: relative;
+    top: 3pc;
 }
 .hero-details{
     margin: 2pc 5pc;
@@ -52,8 +54,35 @@ body{
 }
 
 /* ==============================Hero code ends====================== */
+/* ======================= skills section code =================== */
+
 .skills-list{
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
-    position: relative;
-    top: -2pc;
+    padding-top: 3pc;
+}
+.skills{
+    padding: 1pc 1pc;
+}
+.progress{
+    width: 30rem;
+    height: 25px;
+    font-size: 20px;
+}
+.html-progress{
+    background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
+}
+.css-progress{
+    background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+}
+.cpp-progress{
+    background-image: linear-gradient( 99deg,  rgba(115,18,81,1) 10.6%, rgba(28,28,28,1) 118% );
+}
+.boot-progress{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,221,214,1) 0%, rgba(51,102,255,1) 90% );
+}
+/* ======================= Skills Section Ends ========================  */
+
+/* ========================= Education Timeline =============================  */
+.fa{
+    font-size: x-large;
 }
