@@ -14,11 +14,11 @@
 
 <body>
     <!-- ============ Navbar ============== -->
-    <div class="container navbar d-flex justify-content-between" >
+    <div class="container navbar d-flex justify-content-between flex-wrap" >
         <div class="header-logo">
                 <a href="/index.html"><h1>ARPIT</h1></a>
         </div>
-        <div class="nav-links d-flex">
+        <div class="nav-links d-flex flex-wrap">
             <a href="/index.html" class="nav-link"><h1>Home</h1></a>
             <a href="#skills" class="nav-link"><h1>Skills</h1></a>
             <a href="#projects" class="nav-link"><h1>Projects</h1></a>
@@ -28,15 +28,15 @@
     </div>
     <!-- ============ Navbar code ends ============== -->
     <!-- ============ Hero Section ============== -->
-    <div class="container d-flex" id="hero">
-        <div class="col-6">
+    <div class="container d-flex justify-content-between flex-wrap" id="hero">
+        <div class="col-md-6">
             <img src="/img/author.png" alt="arpit-photo" class="w-100" loading="lazy">
         </div>
-        <div class="col-md hero-details">
+        <div class="col-md-5 col-sm-12 col-xs-12 hero-details">
             <h1>Hi,</h1>
             <h2>I'm <span class="text-green">Arpit Ghura</span></h2>
-            <h3>Front-End Dev | Startup Enthusiasts</h3>
-            <p>Passionate Front-End Developer</p>
+            <h3 class="text-primary">Front-End Dev | Startup Enthusiasts</h3>
+            <p>Currently Pursuing Bachelor of Technology in Computer Science Engineering From LNCT Bhopal. I am a Front-End developer currently learning React.js and also code in C, C++ language. I have also interest in startups and businesses and Currently building <strong>PeaBooks</strong> , an online learning platform for young entrepreneurs. I am also engaged in many communities and club in my college like GDSC Volunteer, KLIC E-CELL Core Member & Co-ordinator, and many more.</p>
 
             <div class="d-flex social-handles flex-wrap">
             <a href="https://www.facebook.com/arpit.ghura01" class="social-link"><i class="fa fa-facebook"></i></a>
@@ -66,6 +66,13 @@
             <i class="fa fa-css3"></i><div class="progress">
                 <div class="progress-bar css-progress" role="progressbar" aria-valuenow="70"
                 aria-valuemin="0" aria-valuemax="100" style="width:70%">70%</div>
+            </div>
+        </div>
+        <div class="skills">
+            <label for="html-skill"><h4>JavaScript</h4></label>
+            <div class="progress">
+                <div class="progress-bar js-progress" role="progressbar" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100" style="width:50%">50%</div>
             </div>
         </div>
         <div class="skills">
@@ -154,7 +161,7 @@
             <div class="card col-lg-4">
                 <img src="./img/yt-ui-design.png" class="card-img-top" alt="YouTube Clone Front-End">
                 <div class="card-body">
-                <h5 class="card-title">YouTube Clone Front-End</h5>
+                <h3 class="card-title">YouTube Clone Front-End</h3>
                 <p class="card-text">Build the Front-End design of YouTube App Using FlexBox and some basic html and css.</p>
                 <a href="https://arpitghura.github.io/youtube-clone-frontend/" class="btn btn-primary mb-2">View Live</a>
                 <a href="https://github.com/arpitghura/youtube-clone-frontend" class="btn btn-warning mb-2">View Code</a>
@@ -164,8 +171,8 @@
             <div class="card col-lg-3">
                 <img src="./img/portfolio.png" class="card-img-top" alt="Portfolio Website">
                 <div class="card-body">
-                <h5 class="card-title">Portfolio Website</h5>
-                <p class="card-text">Creating Own Portfolio is an amazing and cool project and it is the 1st ever project that been update regularly.</p>
+                <h3 class="card-title">Portfolio Website</h3>
+                <p class="card-text">Creating Own Portfolio is an amazing and cool project and it is the first ever project that been update regularly.</p>
                 <!-- <span class="badge rounded-pill bg-primary">Bootstrap</span> -->
                 <a href="https://github.com/arpitghura/arpitghura.github.io" class="btn btn-warning mb-2">View Code</a>
                 </div>
@@ -173,7 +180,7 @@
             <div class="card col-lg-4">
                 <img src="./img/TextUtils App ScreenShot.png" class="card-img-top" alt="TextUtils React App">
                 <div class="card-body">
-                <h5 class="card-title">TextUtils React App</h5>
+                <h3 class="card-title">TextUtils React App</h3>
                 <p class="card-text">TextUtils - Text Utility App Made with React. Learned how to manipulate text and handling functions and also implemented SPA.</p>
                 <a href="https://arpitghura.github.io/TextUtils-React/#/" class="btn btn-primary mb-2">Try Out!</a>
                 <a href="https://github.com/arpitghura/TextUtils-React" class="btn btn-warning mb-2">View Code</a>
@@ -189,8 +196,8 @@
                 <p>Arpit is an Engineering Student, Web developer and startup Enthusiasts building PeaBooks. A online learning platform for young entrepreneurs.</p>
         </div>
         <div class="col-md-4">
-                <h3>Let's Connect [contact]</h3>
-                <div class="social-handle d-flex m-3">
+                <h3>Let's Connect [Contact]</h3>
+                <div class="social-handle d-flex m-3 flex-wrap">
                     <a href="https://www.facebook.com/arpit.ghura01" class="social-link"><i class="fa fa-facebook"></i></a>
                     <a href="https://www.instagram.com/ghura.arpit" class="social-link"><i class="fa fa-instagram"></i></a>
                     <a href="https://www.twitter.com/arpitghura" class="social-link"><i class="fa fa-twitter"></i></a>
