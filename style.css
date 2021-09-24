@@ -6,7 +6,10 @@ body{
 .text-green{
     color: rgba(14,174,87,1);
 }
-
+.social-link > .fa{
+    font-size: 40px;
+    padding: 2px 5px;
+}
 
 /* =========================NavBar======================= */
 .navbar{
@@ -225,3 +228,12 @@ body{
     background-color: rgb(223, 239, 253);
     padding: 2pc;
 }
+.project > .card {
+    margin: 10px 0px !important;
+    font-size: larger !important;
+    /* height: min-content; */
+}
+/* .project .card img {
+    width: min-content;
+    height: min-content;
+} */
