@@ -1,5 +1,7 @@
-Name: ARPIT GHURA
+# Welcome to the portfolio website
+## Build by HTML, CSS, Vanilla js, Bootstrap
+### Created With ❤ by [@ArpitGhura](https://www.twitter.com/arpitghura) 
 
-Technologies Used: HTML & CSS
+<img src="./img/github readme logo (1).png" alt="welcome note">
 
-Github Page Link : https://arpitghura.github.io/
+### Visit Here [arpitghura.me](http://arpitghura.me)
