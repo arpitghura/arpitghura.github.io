@@ -56,10 +56,6 @@ body{
     position: relative;
     top: 3pc;
 }
-.hero-details{
-    /* margin: 2pc 5pc; */
-    margin-right: 0;
-}
 .hero-details > p {
     font-size: large;
 }
@@ -247,7 +243,6 @@ body{
 .project > .card {
     margin: 10px 0px !important;
     font-size: larger !important;
-    /* height: min-content; */
 }
 /* .project .card img {
     width: min-content;
