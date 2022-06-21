@@ -59,6 +59,10 @@ body{
 .hero-details > p {
     font-size: large;
 }
+#hero img{
+    border-radius: 3pc;
+}
+
 @media screen and (max-width:767px){
     .navbar .nav-links{
         margin-top: 1pc;
