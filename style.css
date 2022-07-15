@@ -1,142 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 
-body{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+body {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);
     font-family: 'Baloo 2', cursive;
 }
-.text-green{
-    color: rgba(14,174,87,1);
+
+.text-green {
+    color: rgba(14, 174, 87, 1);
     font-weight: bold;
 }
-.social-link > .fa{
+
+.social-link>.fa {
     font-size: 40px;
     padding: 2px 5px;
 }
 
 /* =========================NavBar======================= */
-.navbar{
+.navbar {
     margin-top: 1pc;
 }
-.header-logo{
+
+.header-logo {
     margin-top: 10px;
     background-color: black;
     border-radius: 3px;
 }
-.header-logo > a{
+
+.header-logo>a {
     text-decoration: none;
 }
-.header-logo h1 , .nav-links a h1{
+
+.header-logo h1,
+.nav-links a h1 {
     text-decoration: none;
     font-weight: 100;
     color: white;
     margin: 5px 10px;
-    text-align: center; 
+    text-align: center;
 }
-.nav-links a{
+
+.header-logo h1{
+    font-size: 1.7pc;
+}
+.nav-links a {
     transition: 0.2s all ease;
     border-radius: 2pc;
     margin: 0 1px;
 }
-.nav-links a h1{
-    font-size: large; 
+
+.nav-links a h1 {
+    font-size: large;
 }
-.nav-links a:hover{
+
+.nav-links a:hover {
     background-color: black;
     transition: 0.2s all ease;
     border-radius: 2pc;
 }
+
 /* ======================Navbar code ends=========================== */
 
 /* ============================Hero section code ============================= */
-#hero{
+#hero {
     background-color: white;
     border-radius: 3pc;
     padding: 2pc;
     position: relative;
     top: 3pc;
 }
-.hero-details > p {
+
+.hero-details>p {
     font-size: large;
 }
-#hero img{
+
+#hero img {
     border-radius: 3pc;
 }
 
-@media screen and (max-width:767px){
-    .navbar .nav-links{
+@media screen and (max-width:767px) {
+    .navbar .nav-links {
         margin-top: 1pc;
     }
-    #hero{
+
+    #hero {
         width: 100vw;
     }
 }
+
 /* ==============================Hero code ends====================== */
 /* ======================= skills section code =================== */
 
-.skills-list{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+.skills-list {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
     padding-top: 4pc;
 }
-.skills{
+
+.skills {
     padding: 1pc 1pc;
 }
-.progress{
+
+.progress {
     height: 30px;
     font-size: 25px;
 }
-.html-progress{
-    background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
+
+.html-progress {
+    background-image: linear-gradient(68.3deg, rgba(245, 177, 97, 1) 0.4%, rgba(236, 54, 110, 1) 100.2%);
 }
-.css-progress{
-    background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+
+.css-progress {
+    background-image: radial-gradient(circle 976px at 51.2% 51%, rgba(11, 27, 103, 1) 0%, rgba(16, 66, 157, 1) 0%, rgba(11, 27, 103, 1) 17.3%, rgba(11, 27, 103, 1) 58.8%, rgba(11, 27, 103, 1) 71.4%, rgba(16, 66, 157, 1) 100.2%, rgba(187, 187, 187, 1) 100.2%);
 }
-.cpp-progress{
-    background-image: linear-gradient( 99deg,  rgba(115,18,81,1) 10.6%, rgba(28,28,28,1) 118% );
+
+.cpp-progress {
+    background-image: linear-gradient(99deg, rgba(115, 18, 81, 1) 10.6%, rgba(28, 28, 28, 1) 118%);
 }
-.js-progress{
-    background-image: linear-gradient( 108.3deg,  rgba(240,219,79,1) 41.8%, rgba(50,51,48,1) 95.6% );
+
+.js-progress {
+    background-image: linear-gradient(108.3deg, rgba(240, 219, 79, 1) 41.8%, rgba(50, 51, 48, 1) 95.6%);
 }
-.boot-progress{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,221,214,1) 0%, rgba(51,102,255,1) 90% );
+
+.boot-progress {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(0, 221, 214, 1) 0%, rgba(51, 102, 255, 1) 90%);
 }
 
 /* ======================= Skills Section Ends ========================  */
 
 /* ========================= Education Timeline =============================  */
-.education-timeline{
+.education-timeline {
     /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% ); */
     background-color: ghostwhite;
     padding: 2pc;
 }
 
-.main-timeline{
+.main-timeline {
     font-family: 'Poppins', sans-serif;
     position: relative;
 }
-.main-timeline:after{
+
+.main-timeline:after {
     content: '';
     display: block;
     clear: both;
 }
-.main-timeline .timeline{
+
+.main-timeline .timeline {
     width: 50%;
     margin: 0 0 20px 20px;
     float: right;
 }
-.main-timeline .timeline-content{
+
+.main-timeline .timeline-content {
     color: #fff;
-    background: linear-gradient(to right,#eb273e,#bf0f23);
+    background: linear-gradient(to right, #eb273e, #bf0f23);
     text-align: center;
     padding: 20px 20px 20px 100px;
     border-radius: 0 20px 20px 0;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     display: block;
     text-decoration: none;
     position: relative;
 }
-.main-timeline .timeline-content:hover{ text-decoration: none; }
-.main-timeline .timeline-year{
+
+.main-timeline .timeline-content:hover {
+    text-decoration: none;
+}
+
+.main-timeline .timeline-year {
     color: #eb273e;
     background-color: #fff;
     font-size: 35px;
@@ -146,12 +177,13 @@ body{
     width: 130px;
     height: 100%;
     border-radius: 98px 0 0 10px;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     position: absolute;
     left: -130px;
     top: 0;
 }
-.main-timeline .timeline-icon{
+
+.main-timeline .timeline-icon {
     color: #fff;
     font-size: 50px;
     transform: translateY(-50%);
@@ -159,64 +191,86 @@ body{
     left: 30px;
     top: 50%;
 }
-.main-timeline .title{
+
+.main-timeline .title {
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0 0 5px;
 }
-.main-timeline .description{
+
+.main-timeline .description {
     font-size: 13px;
     letter-spacing: 1px;
     margin: 0;
 }
-.main-timeline .timeline:nth-child(even){
+
+.main-timeline .timeline:nth-child(even) {
     float: left;
     margin: 0 20px 20px 0;
 }
-.main-timeline .timeline:nth-child(even) .timeline-content{
+
+.main-timeline .timeline:nth-child(even) .timeline-content {
     padding: 20px 100px 20px 20px;
     border-radius: 20px 0 0 20px;
 }
-.main-timeline .timeline:nth-child(even) .timeline-content:before{
-    right:auto;
-    left:0;
+
+.main-timeline .timeline:nth-child(even) .timeline-content:before {
+    right: auto;
+    left: 0;
     clip-path: polygon(0 0, 100% 100%, 65% 0);
 }
-.main-timeline .timeline:nth-child(even) .timeline-year{
+
+.main-timeline .timeline:nth-child(even) .timeline-year {
     left: auto;
     right: -130px;
-    border-radius:0 98px 10px 0;
+    border-radius: 0 98px 10px 0;
 }
-.main-timeline .timeline:nth-child(even) .timeline-icon{
+
+.main-timeline .timeline:nth-child(even) .timeline-icon {
     right: 30px;
     left: auto;
 }
-.main-timeline .timeline:nth-child(4n+2) .timeline-content{
-    background: linear-gradient(to right,#db3d08,#ee5a24);
+
+.main-timeline .timeline:nth-child(4n+2) .timeline-content {
+    background: linear-gradient(to right, #db3d08, #ee5a24);
 }
-.main-timeline .timeline:nth-child(4n+2) .timeline-year{ color: #ee5a24; }
-.main-timeline .timeline:nth-child(4n+3) .timeline-content{
-    background: linear-gradient(to right,#009432,#037529);
+
+.main-timeline .timeline:nth-child(4n+2) .timeline-year {
+    color: #ee5a24;
 }
-.main-timeline .timeline:nth-child(4n+3) .timeline-year{ color: #009432; }
-.main-timeline .timeline:nth-child(4n+4) .timeline-content{
-    background: linear-gradient(to right,#0e6dcc,#2e86de);
+
+.main-timeline .timeline:nth-child(4n+3) .timeline-content {
+    background: linear-gradient(to right, #009432, #037529);
 }
-.main-timeline .timeline:nth-child(4n+4) .timeline-year{ color: #2e86de; }
-@media screen and (max-width:767px){
-    .main-timeline .timeline{
+
+.main-timeline .timeline:nth-child(4n+3) .timeline-year {
+    color: #009432;
+}
+
+.main-timeline .timeline:nth-child(4n+4) .timeline-content {
+    background: linear-gradient(to right, #0e6dcc, #2e86de);
+}
+
+.main-timeline .timeline:nth-child(4n+4) .timeline-year {
+    color: #2e86de;
+}
+
+@media screen and (max-width:767px) {
+    .main-timeline .timeline {
         width: 100%;
         padding: 50px 0 0 0;
     }
+
     .main-timeline .timeline .timeline-content,
-    .main-timeline .timeline:nth-child(even) .timeline-content{
+    .main-timeline .timeline:nth-child(even) .timeline-content {
         padding: 20px 15px 20px 60px;
         border-radius: 0 20px 20px 20px;
     }
+
     .main-timeline .timeline .timeline-year,
-    .main-timeline .timeline:nth-child(even) .timeline-year{
+    .main-timeline .timeline:nth-child(even) .timeline-year {
         font-size: 25px;
         border-radius: 15px 15px 0 0;
         box-shadow: none;
@@ -226,29 +280,55 @@ body{
         top: -50px;
         left: 0;
     }
+
     .main-timeline .timeline .timeline-icon,
-    .main-timeline .timeline:nth-child(even) .timeline-icon{
+    .main-timeline .timeline:nth-child(even) .timeline-icon {
         font-size: 28px;
         left: 15px;
         right: auto;
     }
 }
-@media screen and (max-width:576px){
-    .main-timeline .title{ font-size: 18px; }
+
+@media screen and (max-width:576px) {
+    .main-timeline .title {
+        font-size: 18px;
+    }
 }
-.web-dev-year{
+
+.web-dev-year {
     font-size: x-large !important;
 }
+
 /* ====================== Projects ===================== */
-.projects-section{
+.projects-section {
     background-color: rgb(223, 239, 253);
     padding: 2pc;
 }
-.project > .card {
+
+.project>.card {
     margin: 10px 0px !important;
     font-size: larger !important;
 }
+
 /* .project .card img {
     width: min-content;
     height: min-content;
 } */
+
+/* ======================== Scroll Bar ====================== */
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #198754;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: rgb(20, 169, 172);
+}
