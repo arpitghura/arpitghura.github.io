@@ -1,0 +1,17 @@
+svg {
+    fill: #1fbabf;
+    height: 40px;
+}
+
+.animate-bg-ltor{
+    background: linear-gradient(to right, #26C6DA 50%, #212121 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    margin-left:10px;
+    transition:all 1s ease;
+}
+
+.animate-bg-ltor:hover{
+    background-position:left bottom;
+    color:#212121;
+}
