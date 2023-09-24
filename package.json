@@ -1,26 +1,30 @@
 {
   "name": "arpits-portfolio",
   "version": "0.1.0",
+  "repository": {
+    "url": "git+https://github.com/arpitghura/arpitghura.github.io.git"
+  },
   "private": true,
   "dependencies": {
+    "@tailwindcss/forms": "0.4.0",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-datepicker": "^4.5.0",
     "react-dom": "17.0.2",
     "react-router-dom": "6.0.2",
     "react-router-hash-link": "^2.4.3",
-    "prop-types": "^15.8.1",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.0",
-    "@tailwindcss/forms": "0.4.0"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +46,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.4.2",
+    "gh-pages": "^6.0.0",
     "postcss": "8.4.8",
     "tailwindcss": "3.0.18"
   }
