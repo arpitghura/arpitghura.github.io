@@ -94,7 +94,7 @@ const Skills = () => {
                                 as="h6"
                                 variant="h6"
                             >
-                                Microsoft | June - July 2023 | Hyderabad, India
+                                <span className='text-cyan_400'>Microsoft</span> | June - July 2023 | Hyderabad, India
                             </Text>
                             <Text
                                 className="ml-0.5 md:ml-[0] my-2 text-white_A700"
@@ -170,7 +170,7 @@ const Skills = () => {
                             >
                                 Front End Development
                             </Text>
-                            <div className="flex sm:flex-col flex-row md:gap-[25px] items-start mt-[27px] w-[90%] gap-x-4">
+                            <div className="flex sm:flex-col flex-row md:gap-[25px] items-start mt-[27px] w-[90%] gap-x-4 flex-wrap">
                                 <div className="bg-blue_gray_900 flex md:flex-1 flex-row gap-[10px] justify-between px-5 py-3 rounded-[10px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
                                         <path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z" /></svg>

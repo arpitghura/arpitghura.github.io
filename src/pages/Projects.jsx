@@ -31,8 +31,8 @@ const Projects = () => {
               >
                 Typing Test Web App
               </Text>
-              <div className="w-[30%]">
-                <div className="bg-gray_900 h-[33px] ml-4 rounded-[10px] px-3 py-1 w-[80%]">
+              <div className="w-max">
+                <div className="bg-gray_900 h-max ml-4 rounded-[10px] px-3 py-1 w-max">
                   <Text
                     className="text-cyan_400 uppercase"
                     variant="body3"
@@ -68,7 +68,7 @@ const Projects = () => {
               </div>
 
               <a
-                className="cursor-pointer font-normal leading-[normal] text-[22px] py-3 px-8 mr-2 md:mr-0 text-center text-light_green_300 font-montserrat bg-gray_900 rounded-[20px]" 
+                className="cursor-pointer font-normal leading-[normal] text-[22px] py-3 px-8 ml-4 sm:ml-0 text-center text-light_green_300 font-montserrat bg-gray_900 rounded-[10px]" 
                 href='https://github.com/arpitghura/typing-test'
               >
                 Source Code
@@ -79,7 +79,7 @@ const Projects = () => {
 
       </div>
       <a
-        className="cursor-pointer leading-[normal] mx-auto text-[20px] py-4 px-8 text-center text-cyan_400 font-montserrat animate-bg-ltor rounded-[20px] bg-gray_900" 
+        className="cursor-pointer leading-[normal] mx-auto text-[20px] py-4 px-8 text-center text-cyan_400 font-montserrat animate-bg-ltor rounded-[10px] bg-gray_900" 
         href='https://github.com/arpitghura/front-end-projects'
 
       >
