@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Line, Text } from "components";
+import { Line, Text } from "components";
 
 
 const Projects = () => {

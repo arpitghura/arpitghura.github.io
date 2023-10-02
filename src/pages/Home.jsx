@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/animations.css'
-import { Button, Img, Line, List, Text, BackToTop } from "components";
+import { BackToTop } from "components";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
