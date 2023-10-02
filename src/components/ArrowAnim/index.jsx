@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Img, Line, List, Text, BackToTop } from "components";
+import { Img } from "components";
 
 
 const ArrowAnim = () => {

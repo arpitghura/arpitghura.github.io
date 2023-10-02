@@ -62,6 +62,7 @@ const Hero = () => {
             className="cursor-pointer font-normal leading-[normal] min-w-[187px] py-4 text-center text-gray_900 rounded-[20px] text-lg bg-cyan_400"
             href='https://drive.google.com/file/d/1frGDK2_JNuRl-g8Lm1dEVtm5Xca7b1CK/view?usp=drive_link'
             target='_blank'
+            rel="noopener noreferrer"
           >
             Resume
           </a>
