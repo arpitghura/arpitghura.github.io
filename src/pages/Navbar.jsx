@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import '../styles/utility.css'
 
 const Navbar = () => {
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   }, [scrollState])
 
   return (
-    <header className={`flex flex-row sm:gap-5 items-center justify-between py-3 pl-10 pr-3 sm:top-auto top-0 sticky z-50 ${scrollState ? "bg-gray_900" : "bg-gray_900_02"}`}>
+    <header className='flex flex-row sm:gap-5 items-center justify-between py-3 pl-10 pr-3 sm:top-auto top-0 sticky z-50  blurNav'>
       <a href="/"
         className="font-dancingscript text-[2.5rem] text-cyan_400_dd"
       >
