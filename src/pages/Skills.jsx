@@ -94,8 +94,8 @@ const Skills = () => {
                 as="h6"
                 variant="h6"
               >
-                <span className="text-cyan_400">Kofuku Idea Labs</span> | June -
-                July 2024 | Hyderabad, India
+                <span className="text-cyan_400">Kofuku Idea Labs</span> | Feb -
+                Apr 2024 | Hyderabad, India
               </Text>
               <Text
                 className="ml-0.5 md:ml-[0] my-2 text-white_A700"
