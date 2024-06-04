@@ -80,7 +80,7 @@ const Projects = () => {
       </div>
       <a
         className="cursor-pointer leading-[normal] mx-auto text-[20px] py-4 px-8 text-center text-cyan_400 font-montserrat animate-bg-ltor rounded-[10px] bg-gray_900" 
-        href='https://github.com/arpitghura/front-end-projects'
+        href='https://github.com/arpitghura?tab=repositories'
 
       >
         View More Projects
