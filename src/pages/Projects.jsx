@@ -10,7 +10,7 @@ const Projects = () => {
           <Text className="font-bold text-white_A700" as="h4" variant="h4">
             Projects
           </Text>
-          <Line className="bg-cyan_400 h-1 mt-[3px] w-full sm:w-[42%]" />
+          <Line className="bg-green_A200_dd h-1 mt-[3px] w-full sm:w-[42%]" />
         </div>
         <Text className="font-normal text-white_A700" as="body1" variant="body1">
           Projects are the best way to showcase your level of expertise.
@@ -34,7 +34,7 @@ const Projects = () => {
               <div className="w-max">
                 <div className="bg-gray_900 h-max ml-4 rounded-[10px] px-3 py-1 w-max">
                   <Text
-                    className="text-cyan_400 uppercase"
+                    className="text-green_A200_dd uppercase"
                     variant="body3"
                   >
                     Open Source
@@ -53,7 +53,7 @@ const Projects = () => {
               stored values.
             </Text>
             <div className="flex sm:flex-col flex-row sm:gap-5 items-center md:items-start justify-start mt-4 w-full">
-              <div className="flex flex-row items-center gap-5 bg-gray_900 rounded-[10px]  py-3 px-8 text-center align-baseline text-cyan_400 md:mr-0 mr-6">
+              <div className="flex flex-row items-center gap-5 bg-gray_900 rounded-[10px]  py-3 px-8 text-center align-baseline text-green_A200_dd md:mr-0 mr-6">
                 <a
                   className="font-normal leading-[normal] text-[22px]"
                   href='https://typing-test-project.vercel.app'
@@ -79,7 +79,7 @@ const Projects = () => {
 
       </div>
       <a
-        className="cursor-pointer leading-[normal] mx-auto text-[20px] py-4 px-8 text-center text-cyan_400 font-montserrat animate-bg-ltor rounded-[10px] bg-gray_900" 
+        className="cursor-pointer leading-[normal] mx-auto text-[20px] py-4 px-8 text-center text-green_A200_dd font-montserrat animate-bg-ltor rounded-[10px] bg-gray_900" 
         href='https://github.com/arpitghura?tab=repositories'
 
       >

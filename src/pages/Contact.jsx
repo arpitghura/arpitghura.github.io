@@ -153,7 +153,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <Line className="bg-cyan_400 h-[450px] w-0.5 md:mt-0 my-2 mx-4 md:h-[3px]" />
+          <Line className="bg-green_A200_dd h-[450px] w-0.5 md:mt-0 my-2 mx-4 md:h-[3px]" />
           <form className="flex flex-col gap-5 mb-[7px] p-5 w-full" method="POST" onSubmit={handleSubmitForm}>
             <input
               className="bg-blue_gray_900_01 p-4 mr-4 my-1 w-[100%] text-[20px] rounded-[10px] text-gray_500"
