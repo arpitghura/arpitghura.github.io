@@ -6,8 +6,10 @@ import App from "./App";
 import "./styles/tailwind.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+    // <App />
     <App />
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
   document.getElementById("root")
 );

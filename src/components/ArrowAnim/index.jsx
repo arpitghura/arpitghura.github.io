@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img } from "components";
+import { Img } from '../Img';
 
 
 const ArrowAnim = () => {

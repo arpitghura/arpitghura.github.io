@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Img, Line, Text } from "components";
+import { Img, Line, Text } from "../components";
 import axios from 'axios';
 
 const Contact = () => {

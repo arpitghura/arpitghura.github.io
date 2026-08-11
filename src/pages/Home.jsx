@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/animations.css'
-import { BackToTop } from "components";
+import { BackToTop } from "../components";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
@@ -25,4 +25,4 @@ const HomePage = () => {
 
 };
 
-export default HomePage
+export default HomePage;

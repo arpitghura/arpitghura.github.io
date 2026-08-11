@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img, Text, ArrowAnim } from "components";
+import { Img, Text, ArrowAnim } from "../components";
 
 
 const Hero = () => {

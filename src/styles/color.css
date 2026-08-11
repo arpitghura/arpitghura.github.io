@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root { 
 --gray_900_02:#202020; 
 --blue_gray_100:#d9d9d9; 
