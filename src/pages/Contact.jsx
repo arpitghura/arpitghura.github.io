@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
-import { Img, Line, Text } from "../components";
+import React, { useState, useEffect } from 'react'
+import { Img, Line } from "../components";
 import axios from 'axios';
+import { client } from '../utils/sanityClient';
+import { Typography } from '../components/Text/index';
 
 const Contact = () => {
 
@@ -20,13 +22,13 @@ const Contact = () => {
   }
 
   const handleSubmitForm = async (e) => {
-    if(postData.name === '' || postData.email === '' || postData.message === '') {
+    if (postData.name === '' || postData.email === '' || postData.message === '') {
       setMessage('Please fill all the fields.');
       return;
     }
     console.log(e.target);
     e.preventDefault();
-    try{
+    try {
 
       const res = await axios.post('https://eoahnoskapd5jrd.m.pipedream.net', postData);
       console.log(res);
@@ -44,25 +46,35 @@ const Contact = () => {
     }
   }
 
+  const [summary, setSummary] = useState(null);
+
+  useEffect(() => {
+    client.fetch(`*[_type == "summary"][0]`)
+      .then((data) => {
+        console.log(data);
+        setSummary(data)
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="bg-gray_900_02 flex flex-col items-start justify-center mt-0.5 pl-[60px] mx-auto md:px-5 py-[50px]" id='contact'>
       <div className="flex flex-col gap-[55px] justify-start mt-[9px]">
         <div className="flex flex-col gap-[25px] items-start justify-start ml-2 md:ml-[0]">
-          <Text
+          <Typography
             className="font-semibold text-green_A200"
             as="h4"
             variant="h4"
           >
             Want to Connect with Me?
-          </Text>
-          <Text
+          </Typography>
+          <Typography
             className="font-medium text-white_A700"
             as="h6"
             variant="h6"
           >
             You can contact me through following!!
-          </Text>
+          </Typography>
         </div>
         <div className="flex md:flex-col flex-row md:gap-10 w-[90vw] justify-between">
           <div className="flex flex-col md:mt-0 mt-[23px] pb-[9px] px-[9px] w-full">
@@ -73,13 +85,14 @@ const Contact = () => {
                   className="h-[60px] md:h-10 object-cover"
                   alt="email"
                 />
-                <Text
+                <Typography
                   className="font-medium text-white_A700"
-                  as="h6"
+                  as="a"
+                  href={`mailto:${summary?.email}`}
                   variant="h6"
                 >
-                  ghurarpit.110@gmail.com
-                </Text>
+                  {summary?.email}
+                </Typography>
               </div>
               <div className="flex sm:flex-col flex-row gap-[25px] items-start justify-start mt-4">
                 <Img
@@ -87,13 +100,13 @@ const Contact = () => {
                   className="h-[60px] md:h-10 object-cover"
                   alt="visit"
                 />
-                <Text
+                <Typography
                   className="sm:flex-1 font-medium text-white_A700"
                   as="h6"
                   variant="h6"
                 >
-                  Hyderabad, India
-                </Text>
+                  {summary?.currentLocation}
+                </Typography>
               </div>
               <div className="flex flex-row gap-[25px] items-center justify-start mt-[29px]">
                 <Img
@@ -101,13 +114,14 @@ const Contact = () => {
                   className="h-[60px] md:h-10 object-cover"
                   alt="linkedin"
                 />
-                <Text
+                <Typography
                   className="font-medium text-white_A700"
-                  as="h6"
+                  as="a"
+                  href={summary?.linkedIn}
                   variant="h6"
                 >
-                  @arpitghura
-                </Text>
+                  {summary?.linkedIn}
+                </Typography>
               </div>
               <div className="flex flex-row gap-[25px] items-center justify-start mt-4">
                 <Img
@@ -115,13 +129,14 @@ const Contact = () => {
                   className="h-[60px] md:h-10 object-cover"
                   alt="twitter"
                 />
-                <Text
+                <Typography
                   className="font-medium text-white_A700"
-                  as="h6"
+                  as="a"
+                  href={summary?.twitter}
                   variant="h6"
                 >
-                  @arpitghura
-                </Text>
+                  {summary?.twitter}
+                </Typography>
               </div>
               <div className="flex flex-row gap-[25px] items-center justify-start mt-4">
                 <Img
@@ -129,27 +144,29 @@ const Contact = () => {
                   className="h-[60px] md:h-10 object-cover"
                   alt="github"
                 />
-                <Text
+                <Typography
                   className="font-medium text-white_A700"
-                  as="h6"
+                  as="a"
+                  href={summary?.gitHub}
                   variant="h6"
                 >
-                  @arpitghura
-                </Text>
+                  {summary?.gitHub}
+                </Typography>
               </div>
               <div className="flex flex-row gap-[25px] items-center justify-start mt-4 w-3/5 md">
                 <Img
-                  src="images/img_instagram.png"
+                  src="images/img_youtube.png"
                   className="h-[60px] md:h-10 object-cover"
-                  alt="instagram"
+                  alt="youtube"
                 />
-                <Text
+                <Typography
                   className="font-medium text-white_A700"
-                  as="h6"
+                  as="a"
                   variant="h6"
+                  href={summary?.youTube}
                 >
-                  @ghura.arpit
-                </Text>
+                  {summary?.youTube}
+                </Typography>
               </div>
             </div>
           </div>

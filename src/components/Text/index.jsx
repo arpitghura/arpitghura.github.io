@@ -14,7 +14,7 @@ const variantClasses = {
 };
 
 
-const Text = ({ children, className = "", variant, as, ...restProps }) => {
+const Typography = ({ children, className = "", variant, as, ...restProps }) => {
   const Component = as || "span";
   return (
     <Component
@@ -26,4 +26,5 @@ const Text = ({ children, className = "", variant, as, ...restProps }) => {
   );
 };
 
-export { Text };
+
+export { Typography };

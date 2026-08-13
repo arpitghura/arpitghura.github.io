@@ -1,48 +1,55 @@
-import React from 'react'
-import { Img, Text } from "../components";
+import React, { useEffect, useState } from 'react'
+import { Img } from "../components";
+import { client } from '../utils/sanityClient';
+import { Typography } from '../components/Text/index';
 
 
 const Footer = () => {
+
+  const [summary, setSummary] = useState(null);
+
+  useEffect(() => {
+    client.fetch(`*[_type == "summary"][0]`)
+      .then((data) => {
+        console.log(data);
+        setSummary(data)
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="bg-gray_900 flex flex-row items-start justify-between md:flex-col pt-4 px-4 md:px-5" id='footer'>
       <div className="flex flex-col gap-[22px] justify-start">
-        <Text
+        <Typography
           className="font-medium ml-[16px] text-white_A700"
           as="h6"
           variant="h6"
         >
           Let’s Connect
-        </Text>
+        </Typography>
         <div className="flex flex-row gap-4 items-center justify-between px-[10px] pb-5">
-          <a href="http://www.linkedin.com/in/arpitghura" target="_blank" rel="noopener noreferrer">
+          <a href={summary?.linkedIn || "http://www.linkedin.com/in/arpitghura"} target="_blank" rel="noopener noreferrer">
             <Img
               src="images/img_linkedin.png"
               className="h-10 object-cover"
               alt="linkedin"
             />
           </a>
-          <a href="http://www.github.com/arpitghura" target="_blank" rel="noopener noreferrer">
+          <a href={summary?.gitHub || "http://www.github.com/arpitghura"} target="_blank" rel="noopener noreferrer">
             <Img
               src="images/img_github.png"
               className="h-10 object-cover"
               alt="github"
             />
           </a>
-          <a href="http://www.twitter.com/arpitghura" target="_blank" rel="noopener noreferrer">
+          <a href={summary?.twitter || "http://www.twitter.com/arpitghura"} target="_blank" rel="noopener noreferrer">
             <Img
               src="images/img_twitter.png"
               className="h-10 object-cover"
               alt="twitter"
             />
           </a>
-          <a href="http://www.instagram.com/ghura.arpit" target="_blank" rel="noopener noreferrer">
-            <Img
-              src="images/img_instagram.png"
-              className="h-10 object-cover"
-              alt="instagram"
-            />
-          </a>
-          <a href="http://www.youtube.com/@arpitghura" target="_blank" rel="noopener noreferrer">
+          <a href={summary?.youTube || "http://www.youtube.com/@arpitghura"} target="_blank" rel="noopener noreferrer">
             <Img
               src="images/img_youtube.png"
               className="h-10 object-cover"
@@ -52,7 +59,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center self-center gap-0 px-[10px]">
-        <Text
+        <Typography
           className="font-medium ml-auto my-auto text-center text-white_A700"
           as="h6"
           variant="h6"
@@ -66,13 +73,12 @@ const Footer = () => {
           <span className="text-white_A700 font-montserrat">
             .
           </span>
-        </Text>
-        <Text
+        </Typography>
+        <Typography
           className="md:ml-[0] ml-[auto mt-2.5 text-center text-white_A700"
-          variant="body4"
         >
           Credit: All Icons are taken from Icon scout
-        </Text>
+        </Typography>
       </div>
     </div>
   )
