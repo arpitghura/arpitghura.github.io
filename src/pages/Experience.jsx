@@ -1,171 +1,50 @@
-import React from 'react'
-import { Img, Line } from "../components";
-import { Typography } from '../components/Text/index';
+import React from "react";
 
-const Experience = () => {
-    return (
-        <div
-            className="flex flex-col items-end justify-end mt-[30px] sm:pl-5 pl-6 py-6 w-full"
-            id="experience"
-        >
-            <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between  w-[94%] md:w-full">
-                <div className="flex flex-col justify-start md:mt-0 mt-[3px] w-[18%] md:w-full">
-                    <Typography className="font-bold text-white_A700" as="h5" variant="h5">
-                        Experience
-                    </Typography>
-                    <Line className="bg-cyan_400 h-1 w-[60%] md:w-[50%]" />
-                </div>
-                <div className="flex flex-col gap-[53px] items-center justify-start w-[73%] md:w-full">
-                    <div className="flex flex-col items-start justify-start pr-[3px] py-[3px] w-[90%]">
-                        <Typography
-                            className="font-semibold text-green_A200"
-                            as="h6"
-                            variant="h6"
-                        >
-                            FrontEnd Engineer Intern
-                        </Typography>
-                        <Typography
-                            className="font-medium mt-[5px] text-white_A700 italic"
-                            as="h6"
-                            variant="h6"
-                        >
-                            <span className="text-green_A200_dd">Kofuku Idea Labs</span> | Feb -
-                            Apr 2024 | Hyderabad, India
-                        </Typography>
-                        <Typography
-                            className="ml-0.5 md:ml-[0] my-2 text-white_A700"
+const experiences = [
+  {
+    role: "Associate Software Engineer II", company: "MetLife", period: "Nov 2025 — Present", location: "Hyderabad, India",
+    highlights: ["Redesigned the Admin Panel UI to streamline bulk case invitations and improve user experience.", "Implemented a new filtering and search system for efficient case retrieval.", "Integrated the Admin Panel with the core application logic for seamless data flow."],
+    skills: ["Java", "Spring Boot", "Spring Security", "JPA", "Hibrernate", "Microsoft Azure", "AI"],
+  },
+  {
+    role: "Software Engineer", company: "KFin Technologies", period: "Aug 2024 — Nov 2025", location: "Hyderabad, India",
+    highlights: ["Redesigned the Admin Panel UI to streamline bulk case invitations and improve user experience.", "Implemented a new filtering and search system for efficient case retrieval.", "Integrated the Admin Panel with the core application logic for seamless data flow."],
+    skills: ["React", "Redux", "TypeScript", "Javascript", "Node.js", "Express.js", "AWS"],
+  },
+  {
+    role: "Software Engineer Intern", company: "KFin Technologies", period: "Apr 2024 — Aug 2024", location: "Hyderabad, India",
+    highlights: ["Redesigned the Admin Panel UI to streamline bulk case invitations and improve user experience.", "Implemented a new filtering and search system for efficient case retrieval.", "Integrated the Admin Panel with the core application logic for seamless data flow."],
+    skills: ["React", "Redux", "TypeScript", "Javascript", "TailwindCSS"],
+  },
+  {
+    role: "Front-end Engineer Intern", company: "Kofuku Idea Labs", period: "Feb — Apr 2024", location: "Hyderabad, India",
+    highlights: ["Built invite-only workflows for a case management platform.", "Streamlined bulk invitations and improved admin workflow by 7%.", "Reduced case search time by 12% with a focused filtering experience."],
+    skills: ["Next.js", "React", "Redux", "TypeScript", "SCSS"],
+  },
+  {
+    role: "Software Developer Intern", company: "Microsoft", period: "Jun — Jul 2023", location: "Hyderabad, India",
+    highlights: ["Developed user-focused concepts for the Microsoft To Do web client.", "Delivered four design POCs, including a Smart List Pivot Pill concept.", "Collaborated with product and design teams to refine task-management interactions."],
+    skills: ["React", "TypeScript", "Redux", "Azure DevOps", "Bootstrap"],
+  },
+];
 
-                        >
-                            <ul className="list-disc mt-2 w-[95%]">
-                                <li className="md:py-2">
-                                    Developed an invite-only platform for Case Management
-                                    Software, enhancing user experience.
-                                </li>
-                                <li className="md:py-2">
-                                    Streamlined admin workflow by 7% through bulk user
-                                    invitation, leveraging email extraction from pasted content.
-                                </li>
-                                <li className="md:py-2">
-                                    Improved case search efficiency by 12% with a filter flow
-                                    implementation, reducing user search time.
-                                </li>
-                                <li className="md:py-2">
-                                    Expanded technical expertise in CSS Modules (SCSS), Redux
-                                    Persist, and micro-frontend architecture with Nextjs 14.
-                                </li>{" "}
-                            </ul>
-                        </Typography>
-                        <Typography
-                            className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-                        // variant="body"
-                        >
-                            <span className="bold">Skills: </span>
-                            <span className="text-green_A200">
-                                Next.js · Redux · React.js · SCSS · Typescript · Javascript · UI Design
-                            </span>
-                        </Typography>
-                    </div>
-                    <div className="flex flex-col items-start justify-start pr-[3px] py-[3px] w-[90%]">
-                        <Typography
-                            className="font-semibold text-green_A200"
-                            as="h6"
-                            variant="h6"
-                        >
-                            Software Developer Intern
-                        </Typography>
-                        <Typography
-                            className="font-medium mt-[5px] text-white_A700 italic"
-                            as="h6"
-                            variant="h6"
-                        >
-                            <span className="text-green_A200_dd">Microsoft</span> | June - July
-                            2023 | Hyderabad, India
-                        </Typography>
-                        <Typography
-                            className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-
-                        >
-                            <ul className="list-disc mt-2 w-[95%]">
-                                <li className="md:py-2">
-                                    Spearheaded the development of the Microsoft ToDo web app
-                                    within the client team.
-                                </li>
-                                <li className="md:py-2">
-                                    Developed four Proof of Concepts (POCs) to enhance the app's
-                                    design, leading to a more user-friendly experience.
-                                </li>
-                                <li className="md:py-2">
-                                    Contributed significantly to the new design, revolutionizing
-                                    how users interact with their tasks, particularly in the
-                                    MyDay section.
-                                </li>
-                                <li className="md:py-2">
-                                    Successfully implemented the innovative Smart List Pivot
-                                    Pill design within one of the POCs, streamlining task
-                                    management by categorizing them based on predefined rules.
-                                </li>
-                                <li className="md:py-2">
-                                    Demonstrated proficiency in React, Redux, TypeScript,
-                                    JavaScript, and Bootstrap throughout the development
-                                    process.
-                                </li>
-                                <li className="md:py-2">
-                                    Collaborated closely with product managers and the design
-                                    team to ensure a user-centric design approach, fostering a
-                                    seamless interaction between development and design.
-                                </li>
-                                <li className="md:py-2">
-                                    Gained invaluable experience in presenting and iterating on
-                                    concepts, with one POC selected for further development and
-                                    refinement.
-                                </li>{" "}
-                            </ul>
-                        </Typography>
-                        <Typography
-                            className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-
-                        >
-                            <span className="bold">Skills: </span>
-                            <span className="text-green_A200">
-                                React · Javascript · UI Design · Azure DevOps Server · Git ·
-                                Bootstrap · JavaScript · Redux · Responsiveness · TypeScript ·
-                                React.js
-                            </span>
-                        </Typography>
-                    </div>
-                    {/* <div className="flex flex-col items-start justify-start w-[90%]">
-                <Typography
-                  className="font-semibold text-green_A200"
-                  as="h6"
-                  variant="h6"
-                >
-                  Co-Founder{" "}
-                </Typography>
-                <Typography
-                  className="font-medium mt-2 text-white_A700 italic"
-                  as="h6"
-                  variant="h6"
-                >
-                  Iconic Institute of Modern Education | Bhopal, India
-                </Typography>
-                <Typography
-                  className="ml-0.5 md:ml-[0] text-white_A700"
-                  variant="body"
-                >
-                  <ul className="list-disc mt-2 w-[90%]">
-                    <li className="md:py-2">
-                      Build a technology company for providing the top notch content on leadership, personality development, communication and related.
-                    </li>
-                    <li className="md:py-2">
-                      Community of over 5000+ students in 50+ colleges all over India.
-                    </li>
-                  </ul>
-                </Typography>
-              </div> */}
-                </div>
-            </div>
+const Experience = () => <section id="experience" className="section-padding bg-[#0a0a0a]">
+  <div className="container-max">
+    <p className="text-sm font-bold uppercase tracking-[.2em] text-[#55bb97]">Where I&apos;ve contributed</p>
+    <h2 className="mt-3 font-spartan text-4xl font-bold text-[#f0f0f0] sm:text-5xl">Experience</h2>
+    <div className="section-title-line w-32" />
+    <div className="relative mt-12 space-y-8 border-l border-[#55bb97]/30 pl-7 sm:pl-10">
+      {experiences.map((experience) => <article key={experience.company} className="relative glass-card p-6 sm:p-8">
+        <span className="absolute -left-[35px] top-8 h-4 w-4 rounded-full border-4 border-[#0a0a0a] bg-[#55bb97] shadow-[0_0_18px_rgba(85,187,151,.7)] sm:-left-[47px]" />
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div><h3 className="font-spartan text-2xl font-bold text-[#f0f0f0]">{experience.role}</h3><p className="mt-1 font-semibold text-[#55bb97]">{experience.company}</p></div>
+          <div className="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-xs font-semibold text-[#a0a0a0]">{experience.period} · {experience.location}</div>
         </div>
-    )
-}
+        <ul className="mt-5 space-y-2 text-sm leading-6 text-[#a0a0a0] sm:text-base">{experience.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1fbabf]" />{highlight}</li>)}</ul>
+        <div className="mt-6 flex flex-wrap gap-2">{experience.skills.map((skill) => <span className="tech-pill" key={skill}>{skill}</span>)}</div>
+      </article>)}
+    </div>
+  </div>
+</section>;
 
-export default Experience
+export default Experience;

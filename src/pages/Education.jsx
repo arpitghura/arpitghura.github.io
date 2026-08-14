@@ -1,99 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { client } from '../utils/sanityClient';
-import { Img, Line } from "../components";
-import { Typography } from '../components/Text/index';
+import React, { useEffect, useState } from "react";
+import { client } from "../utils/sanityClient";
 
 const Education = () => {
-    const [educations, setEducations] = useState(null);
+  const [educations, setEducations] = useState([]);
+  useEffect(() => { client.fetch('*[_type == "education"] | order(startDate desc)').then(setEducations).catch(console.error); }, []);
+  return <section id="education" className="section-padding bg-[#0f0f0f]">
+    <div className="container-max"><p className="text-sm font-bold uppercase tracking-[.2em] text-[#55bb97]">Academic foundation</p><h2 className="mt-3 font-spartan text-4xl font-bold text-[#f0f0f0] sm:text-5xl">Education</h2><div className="section-title-line w-32" />
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
+        {educations.map((education) => <article className="glass-card p-6" key={education._id}>
+          <div className="flex items-start justify-between gap-4"><div><h3 className="font-spartan text-2xl font-bold text-[#f0f0f0]">{education.degree}</h3><p className="mt-2 font-semibold text-[#55bb97]">{education.university}</p></div>{education.cgpa && <span className="rounded-full bg-[#55bb97]/15 px-3 py-1 text-sm min-w-max font-bold text-[#79d9b7]">CGPA: {education.cgpa}</span>}</div>
+          <p className="mt-4 text-[#a0a0a0]">{[education.major, education.location].filter(Boolean).join(" · ")}</p><p className="mt-5 text-sm font-semibold text-[#a0a0a0]">{new Date(education.startDate).getFullYear()} — {new Date(education.endDate).getFullYear()}</p>
+        </article>)}
+        {!educations.length && <p className="text-[#a0a0a0]">Education details are loading.</p>}
+      </div>
+    </div>
+  </section>;
+};
 
-    useEffect(() => {
-        client.fetch(`*[_type == "education"]`)
-            .then((data) => {
-                console.log(data);
-                setEducations(data)
-            })
-            .catch(console.error);
-    }, []);
-    return (
-        <div
-            className="flex flex-col items-end justify-end mt-[43px] sm:pl-5 pl-6 py-6 w-full"
-            id="education"
-        >
-            <div className="flex md:flex-col flex-row md:gap-10 items-start justify-between mt-[54px] w-[94%] md:w-full">
-                <div className="flex flex-col justify-start md:mt-0 mt-[3px] w-[18%] md:w-full">
-                    <Typography className="font-bold text-white_A700" as="h5" variant="h5">
-                        Education
-                    </Typography>
-                    <Line className="bg-green_A200_dd h-1 w-[55%] md:w-[45%]" />
-                </div>
-                <div className="flex flex-col gap-[53px] items-center justify-start w-[73%] md:w-full">
-                    {educations?.map((education, index) => (<div className="flex flex-col items-start justify-start pr-[3px] py-[3px] w-[90%]" key={index}>
-                        <Typography
-                            className="font-semibold text-green_A200"
-                            as="h6"
-                            variant="h6"
-                        >
-                            {education?.degree}
-                        </Typography>
-                        <Typography
-                            className="font-medium mt-[5px] text-white_A700 italic"
-                            as="h6"
-                            variant="h6"
-                        >
-                            {education?.university}
-                        </Typography>
-                        <Typography
-                            className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-                        >
-                            {education?.startDate} - {education?.endDate} | CGPA: {education?.cgpa}
-                        </Typography>
-                    </div>))}
-                    {/* <div className="flex flex-col items-start justify-start w-[90%]">
-                  <Typography
-                    className="font-semibold text-green_A200"
-                    as="h6"
-                    variant="h6"
-                  >
-                    <span className="text-green_A200_dd">Kofuku Idea Labs</span> | Feb -
-                    Apr 2024 | Hyderabad, India
-                  </Typography>
-                  <Typography
-                    className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-                    variant="body"
-                  >
-                    <ul className="list-disc mt-2 w-[95%]">
-                      <li className="md:py-2">
-                        Developed an invite-only platform for Case Management
-                        Software, enhancing user experience.
-                      </li>
-                      <li className="md:py-2">
-                        Streamlined admin workflow by 7% through bulk user
-                        invitation, leveraging email extraction from pasted content.
-                      </li>
-                      <li className="md:py-2">
-                        Improved case search efficiency by 12% with a filter flow
-                        implementation, reducing user search time.
-                      </li>
-                      <li className="md:py-2">
-                        Expanded technical expertise in CSS Modules (SCSS), Redux
-                        Persist, and micro-frontend architecture with Nextjs 14.
-                      </li>{" "}
-                    </ul>
-                  </Typography>
-                  <Typography
-                    className="ml-0.5 md:ml-[0] my-2 text-white_A700"
-                    variant="body"
-                  >
-                    <span className="bold">Skills: </span>
-                    <span className="text-green_A200">
-                      Next.js · Redux · React.js · SCSS · Typescript · Javascript · UI Design
-                    </span>
-                  </Typography>
-                </div> */}
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default Education
+export default Education;

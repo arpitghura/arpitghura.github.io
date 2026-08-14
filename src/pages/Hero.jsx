@@ -1,90 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { Img, ArrowAnim } from "../components";
-import { client } from '../utils/sanityClient';
-import { Typography } from '../components/Text/index';
+import React, { useEffect, useState } from "react";
+import { ArrowAnim, Icon } from "../components";
+import { client } from "../utils/sanityClient";
 
+const socialLinks = [
+  ["linkedin", "linkedIn", "LinkedIn"], ["github", "gitHub", "GitHub"], ["x", "twitter", "X"], ["youtube", "youTube", "YouTube"],
+];
 
 const Hero = () => {
   const [summary, setSummary] = useState(null);
+  useEffect(() => { client.fetch('*[_type == "summary"][0]').then(setSummary).catch(console.error); }, []);
+  const role = summary?.role || "Software Engineer";
 
-  useEffect(() => {
-    client.fetch(`*[_type == "summary"][0]`)
-      .then((data) => {
-        console.log(data);
-        setSummary(data)
-      })
-      .catch(console.error);
-  }, []);
-
-  return (
-    <>
-      <div className="flex flex-col items-center justify-center bg-gray_900 h-[85dvh]" id='hero'>
-        <Typography
-          className="text-center text-gray_200 motion-safe:animate-bounce-slow"
-          as="h1"
-          variant="h1"
-        >
-          Hi, I’m Arpit Ghura
-        </Typography>
-        <Typography
-          className="mt-[11px] text-center text-gray_700"
-          as="h2"
-          variant="h2"
-        >
-          {summary?.role || "Software Engineer"}
-        </Typography>
-        <div className="flex flex-row gap-10 md:gap-5 mt-2.5 pb-0.5 px-0.5 flex-wrap">
-          <a href={summary?.linkedIn} target="_blank" rel="noopener noreferrer">
-            <Img
-              src="images/img_linkedin.png"
-              className="h-[60px] md:h-10 object-cover"
-              alt="linkedin"
-            />
-          </a>
-          <a href={summary?.gitHub} target="_blank" rel="noopener noreferrer">
-            <Img
-              src="images/img_github.png"
-              className="h-[60px] md:h-10 object-cover"
-              alt="github"
-            />
-          </a>
-          <a href={summary?.twitter} target="_blank" rel="noopener noreferrer">
-            <Img
-              src="images/img_twitter.png"
-              className="h-[60px] md:h-10 object-cover"
-              alt="twitter"
-            />
-          </a>
-          <a href={summary?.youTube} target="_blank" rel="noopener noreferrer">
-            <Img
-              src="images/img_youtube.png"
-              className="h-[60px] md:h-10 object-cover"
-              alt="youtube"
-            />
-          </a>
-        </div>
-        <div className="flex sm:flex-col flex-row sm:gap-10 gap-[78px] items-center justify-center mt-[38px]">
-          <a
-            className="cursor-pointer  leading-[normal] min-w-[187px] py-4 text-center text-gray_900 rounded-[20px] text-lg bg-green_A200 text-blue_900 hover:bg-green_A200_dd border border-green_A200 font-bold"
-            href={summary?.cvUrl}
-            target='_blank'
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-          <a
-            className="cursor-pointer leading-[normal] min-w-[187px] py-4 text-center bg-blue_gray_900 text-green_A200 hover:bg-green_A200_dd hover:text-blue_900 border border-green_A200 text-lg rounded-[20px] font-bold"
-            href='#contact'
-          >
-            Contact
-          </a>
-        </div>
+  return <section id="home" className="hero-mesh relative flex min-h-screen items-center overflow-hidden px-5 pt-24">
+    <div className="pointer-events-none absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#55bb97]/10 blur-[120px]" />
+    <div className="container-max relative z-10 text-center">
+      <p className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-[#55bb97] animate-[fadeIn_.5s_ease_both]">Portfolio / 2026</p>
+      <h1 className="mx-auto max-w-4xl font-spartan text-5xl font-bold leading-[.95] text-[#f0f0f0] sm:text-6xl md:text-7xl">
+        Designing code that makes <span className="gradient-text">ideas tangible.</span>
+      </h1>
+      <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-[#a0a0a0] animate-[fadeInUp_.7s_ease_.1s_both]">
+        Hi, I&apos;m Arpit Ghura — a <span className="border-r-2 border-[#55bb97] pr-1 font-semibold text-[#f0f0f0] typewriter-role">{role}</span> building dependable digital experiences.
+      </p>
+      <div className="mt-8 flex justify-center gap-3 animate-[fadeInUp_.7s_ease_.2s_both]">
+        {socialLinks.map(([icon, key, label]) => summary?.[key] && <a key={key} href={summary[key]} target="_blank" rel="noreferrer" aria-label={label} className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[.03] text-[#d9d9d9] transition hover:border-[#55bb97]/50 hover:bg-[#55bb97]/10 hover:text-[#55bb97]">
+          <Icon name={icon} className="h-5 w-5" />
+        </a>)}
       </div>
-      <div className='mx-auto w-[50px]'>
-        <ArrowAnim />
+      <div className="mt-10 flex flex-wrap justify-center gap-4 animate-[fadeInUp_.7s_ease_.3s_both]">
+        {summary?.cvUrl && <a className="btn-primary inline-flex items-center gap-2" href={summary.cvUrl} target="_blank" rel="noreferrer">View résumé <Icon name="external" className="h-4 w-4" /></a>}
+        <a className="btn-outline inline-flex items-center gap-2" href="#contact">Start a conversation <Icon name="arrowRight" className="h-4 w-4" /></a>
       </div>
-    </>
-  )
-}
+    </div>
+    <a href="#about" aria-label="Scroll to about section" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#55bb97] motion-safe:animate-bounce"><ArrowAnim /></a>
+  </section>;
+};
 
-export default Hero
+export default Hero;

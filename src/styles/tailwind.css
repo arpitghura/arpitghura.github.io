@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --primary-color: #1fbabf;
-}
-/* Override default focus colors for tailwindcss-forms https://github.com/tailwindlabs/tailwindcss-forms */
+/* ===== Focus ring override ===== */
 [type='text']:focus,
 [type='email']:focus,
 [type='url']:focus,
@@ -16,97 +13,235 @@
 [multiple]:focus,
 textarea:focus,
 select:focus {
-  --tw-ring-color: var(--primary-color);
-  border-color: var(--primary-color);
+  --tw-ring-color: #55bb97;
+  border-color: #55bb97;
 }
 
-.react-datepicker-wrapper .react-datepicker__input-container input{
-  background-color: transparent;
-  border: none;
-  width: 100%;
-  padding: 0px;
-}
-.react-datepicker__day.react-datepicker__day--keyboard-selected {
-  background: none;
-  color: black;
-}
-input:focus, textarea:focus{
-  outline:none !important;
+input:focus, textarea:focus {
+  outline: none !important;
   outline-offset: 0 !important;
-  --tw-ring-offset-width:none !important;
+  --tw-ring-offset-width: none !important;
 }
 
-li:focus-visible{
+/* ===== Smooth scroll ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Custom scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #55bb97;
+}
+
+/* ===== Glass Card utility ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(85, 187, 151, 0.2);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(85, 187, 151, 0.08);
+}
+
+/* ===== Gradient text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #55bb97 0%, #1fbabf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Section title accent line ===== */
+.section-title-line {
+  height: 3px;
+  background: linear-gradient(90deg, #55bb97, #1fbabf, transparent);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* ===== Pill chip ===== */
+.tech-pill {
+  background: rgba(85, 187, 151, 0.08);
+  border: 1px solid rgba(85, 187, 151, 0.2);
+  color: #55bb97;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.tech-pill:hover {
+  background: rgba(85, 187, 151, 0.15);
+  border-color: rgba(85, 187, 151, 0.4);
+}
+
+/* ===== Skill chip ===== */
+.skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 16px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+.skill-chip:hover {
+  background: rgba(85, 187, 151, 0.08);
+  border-color: rgba(85, 187, 151, 0.25);
+  box-shadow: 0 0 16px rgba(85, 187, 151, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== Blurred nav ===== */
+.blurNav {
+  background: rgba(8, 8, 8, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ===== CTA Buttons ===== */
+.btn-primary {
+  background: #55bb97;
+  color: #080808;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: 1.5px solid #55bb97;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: #55bb97;
+  box-shadow: 0 0 20px rgba(85, 187, 151, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #55bb97;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(85, 187, 151, 0.5);
+  transition: all 0.25s ease;
+}
+.btn-outline:hover {
+  background: rgba(85, 187, 151, 0.08);
+  border-color: #55bb97;
+  box-shadow: 0 0 20px rgba(85, 187, 151, 0.2);
+}
+
+/* ===== Form inputs ===== */
+.portfolio-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: #f0f0f0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.portfolio-input::placeholder {
+  color: #606060;
+}
+.portfolio-input:focus {
   outline: none;
+  border-color: rgba(85, 187, 151, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(85, 187, 151, 0.1);
 }
 
-li:hover{
+/* ===== Timeline ===== */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #55bb97, rgba(85,187,151,0.1));
+}
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: #55bb97;
+  border-radius: 50%;
+  border: 2px solid #080808;
+  box-shadow: 0 0 12px rgba(85, 187, 151, 0.5);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ===== Section spacing ===== */
+.section-padding {
+  padding: 80px 0;
+}
+.container-max {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 1050px) {
+  .container-max {
+    padding: 0 24px;
+  }
+}
+@media (max-width: 550px) {
+  .container-max {
+    padding: 0 16px;
+  }
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* ===== Cursor hover ===== */
+li:hover {
   cursor: pointer;
 }
 
+/* ===== Tab panel ===== */
 .tab-panel--selected { animation-name: tabPanel; animation-duration: 300ms; animation-timing-function: linear; }
 @keyframes tabPanel { from { opacity: 0; } to { opacity: 1; } }
-/* Input style */
-.input-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+
+/* Mesh gradient hero background */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(85,187,151,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 50%, rgba(31,186,191,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 80%, rgba(85,187,151,0.06) 0%, transparent 60%),
+    #080808;
 }
 
-.input-container label {
-  position: absolute;
-  transform-origin: top left;
-  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+.typewriter-role {
+  display: inline-block;
+  animation: typewriter 2s steps(28, end) both;
 }
 
-.input-container input {
-  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-}
-
-.ps-menu-icon {
-  width: unset !important;
-  min-width: unset !important;
-  justify-content: start !important;
-  margin: 0 !important;
-}
-.ps-menu-button, .ps-menu-icon {
-  height: unset !important;
-}
-.ps-menu-button:hover {
-  background-color: unset !important;
-}
-.ps-sidebar-container, .ps-submenu-content{
-  background-color: transparent !important;
-}
-.ps-collapsed .ps-menu-icon{
-  min-width: 100% !important;
-  justify-content: center !important;
-}
-.ps-collapsed{
-  width: 80px !important;
-}
-.ps-sidebar-container, .ps-menu-root,.ps-menu-root>ul{
-  width:100%;
-  display:flex;
-  flex-direction: column;
-}
-.ps-sidebar-root{
-  min-width: unset !important;
-  border: none !important;
-}
-.ps-collapsed, .ps-collapsed .ps-menu-root, .ps-collapsed .ps-menu-button{
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  margin-left: unset !important;
-  margin-right: unset !important;
-}
-.ps-collapsed ul{
-  align-items: center;
-}
-.ps-menu-label{
-  display: flex;
-  justify-content: space-between;
-}
-html{
-  scroll-behavior: smooth;
+@keyframes typewriter {
+  from { max-width: 0; }
+  to { max-width: 100%; }
 }

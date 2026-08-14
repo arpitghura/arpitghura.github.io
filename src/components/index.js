@@ -4,3 +4,4 @@ export { Line } from "./Line";
 export { List } from "./List";
 export { BackToTop } from "./BackToTop";
 export { ArrowAnim } from "./ArrowAnim";
+export { default as Icon } from "./Icon";

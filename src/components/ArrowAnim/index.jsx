@@ -1,17 +1,6 @@
-import React from 'react'
-import { Img } from '../Img';
+import React from "react";
+import Icon from "../Icon";
 
-
-const ArrowAnim = () => {
-    return (
-        <div className="bg-blue_gray_100 p-[7px] rounded-[37px] w-[75px] motion-safe:animate-bounce">
-            <Img
-                src="images/img_collapsearrow.png"
-                className="h-[60px] md:h-auto object-cover w-[60px]"
-                alt="collapsearrow"
-            />
-        </div>
-    )
-}
+const ArrowAnim = () => <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#55bb97]/40 bg-[#55bb97]/10"><Icon name="arrowDown" className="h-6 w-6" /></span>;
 
 export { ArrowAnim };

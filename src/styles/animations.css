@@ -1,19 +1,81 @@
 @import "tailwindcss";
 
+/* ===== SVG defaults ===== */
 svg {
-    fill: #1fbabf;
-    height: 40px;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
 }
 
-.animate-bg-ltor{
-    background: linear-gradient(to right, #26C6DA 50%, #212121 50%);
-    background-size: 200% 100%;
-    background-position:right bottom;
-    margin-left:10px;
-    transition:all 1s ease;
+/* ===== Keyframe Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-bg-ltor:hover{
-    background-position:left bottom;
-    color:#212121;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(85, 187, 151, 0.2); }
+  50%       { box-shadow: 0 0 50px rgba(85, 187, 151, 0.5); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes timelineDraw {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Background animation (animated button) ===== */
+.animate-bg-ltor {
+  background: linear-gradient(to right, #55bb97 50%, #161616 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease;
+}
+.animate-bg-ltor:hover {
+  background-position: left bottom;
+  color: #080808;
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

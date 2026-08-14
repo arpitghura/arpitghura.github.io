@@ -1,60 +1,14 @@
-import React from 'react'
-import { Typography } from '../Text/index'
+import React from "react";
+import Icon from "../Icon";
 
-const ProjectCard = ({ project }) => {
-    console.log(project, "project data");
-    return (
-        <div className="flex md:flex-col flex-row gap-[21px] items-start justify-between mb-[5px] w-full">
-            <div className="bg-blue_gray_100_33  md:mt-0 mt-3.5 rounded-[10px] w-[90%]">
-                {/* <img src={project?.projectImage} alt={project?.imageAlt} className='object-cover' /> */}
-            </div>
-            <div className="flex flex-col items-start justify-start">
-                <div className="flex flex-row w-full mt-4">
-                    <Typography
-                        className="font-semibold text-green_A200"
-                        as="h5"
-                        variant="h5"
-                    >
-                        {project?.title}
-                    </Typography>
-                    <div className="bg-gray_900 h-max ml-4 rounded-[10px] px-3 py-1 w-max">
-                        <Typography
-                            className="text-green_A200_dd uppercase"
-                        >
-                            {project?.tags?.join(", ")}
-                        </Typography>
-                    </div>
-                </div>
-                <div className="flex flex-row gap-2 w-max flex-wrap my-2 font-semibold text-sm">
-                    {project?.technologies?.map((tech, index) => (
-                        <span key={index} className="bg-gray-200 px-2 py-1 rounded-lg">{tech}</span>
-                    ))}
-                </div>
-                <Typography
-                    className="font-normal mt-3.5 text-white_A700 w-[90%]"
-                    variant="body2"
-                >
-                    {project?.description}
-                </Typography>
-                <div className="flex flex-row sm:gap-5 items-center w-full">
-                    <div className="flex flex-row items-center gap-5 bg-gray_900 rounded-[10px]  py-3 px-8 text-green_A200_dd md:mr-0 mr-6">
-                        <a
-                            className="font-normal leading-[normal] text-[22px]"
-                            href={project?.projectUrl}
-                        >
-                            Visit
-                        </a>
-                    </div>
-                    <a
-                        className="cursor-pointer font-normal leading-[normal] text-[22px] py-3 px-8 ml-4 sm:ml-0 text-center text-light_green_300 font-montserrat bg-gray_900 rounded-[10px]"
-                        href={project?.githubUrl}
-                    >
-                        Source Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    )
-}
+const ProjectCard = ({ project }) => <article className="glass-card flex h-full flex-col p-6 sm:p-7">
+  <div className="flex flex-wrap items-start justify-between gap-4"><h3 className="font-spartan text-2xl font-bold text-[#f0f0f0]">{project?.title}</h3>{project?.tags?.length > 0 && <span className="rounded-full border border-[#55bb97]/25 bg-[#55bb97]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#83e0bf]">{project.tags.join(" · ")}</span>}</div>
+  <div className="mt-5 flex flex-wrap gap-2">{project?.technologies?.map((technology) => <span className="tech-pill" key={technology}>{technology}</span>)}</div>
+  <p className="mt-6 flex-1 leading-7 text-[#a0a0a0]">{project?.description}</p>
+  <div className="mt-7 flex flex-wrap gap-3">
+    {project?.projectUrl && <a href={project.projectUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#55bb97]/40 px-4 py-2 text-sm font-bold text-[#83e0bf] transition hover:bg-[#55bb97] hover:text-[#080808]"><Icon name="external" className="h-4 w-4" /> Visit</a>}
+    {project?.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-bold text-[#d9d9d9] transition hover:border-white/40 hover:bg-white/10"><Icon name="github" className="h-4 w-4" /> Source</a>}
+  </div>
+</article>;
 
-export default ProjectCard
+export default ProjectCard;

@@ -1,71 +1,29 @@
-import React from "react";
-import { Img } from "../components";
-import { useEffect, useState } from "react";
-import { client } from "../utils/sanityClient";
-import { Typography } from "../components/Text/index";
+import React, { useEffect, useState } from "react";
+import { client, urlFor } from "../utils/sanityClient";
 
 const About = () => {
   const [summary, setSummary] = useState(null);
+  useEffect(() => { client.fetch('*[_type == "summary"][0]').then(setSummary).catch(console.error); }, []);
+  const profilePic = summary?.profilePic ? urlFor(summary.profilePic).width(900).url() : "images/arpit.png";
 
-  useEffect(() => {
-    client.fetch(`*[_type == "summary"][0]`)
-      .then((data) => {
-        console.log(data);
-        setSummary(data)
-      })
-      .catch(console.error);
-  }, []);
-
-  return (
-    <div
-      className="bg-blue_gray_900_cc flex flex-col items-center justify-center p-12 md:px-10 sm:px-5"
-      id="about"
-    >
-      <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between mb-[20px] mt-[15px] w-[90%] md:w-[97%]">
-        <Img
-          src={summary?.profilePic || "images/arpit.png"}
-          className="h-[530px] md:h-auto mb-1 md:mt-0 object-cover rounded-[25px]"
-          alt="arpit ghura photo"
-        />
-        <div className="flex flex-col items-start justify-start pl-4 ml-4 md:ml-0">
-          <Typography className="font-semibold text-green_A200_dd" as="h4" variant="h4">
-            About Me
-          </Typography>
-          <Typography
-            className="font-normal text-justify text-white_A700"
-          >
-            <span className="block my-4">
-              I’m Arpit Ghura, a Software Engineer passionate about building intuitive, scalable, and impactful digital products. With a strong foundation in the <strong className="bg-green_A200_dd text-gray-900 px-0.5 mx-0.5">Full-Stack development</strong> and experience across modern frameworks like <strong className="bg-green_A200_dd text-gray-900 px-0.5 mx-0.5">React, Next.js, and Node.js</strong>, I enjoy turning complex ideas into clean, functional, and user-friendly solutions.
-            </span>
-            <span className="block my-4">
-              Over the past few years, I’ve worked on diverse projects ranging from <strong className="bg-green_A200_dd text-gray-900 px-0.5 mx-0.5">enterprise-grade tools for team and task management</strong> to <strong className="bg-green_A200_dd text-gray-900 px-0.5 mx-0.5">monitoring and case management systems</strong> that improved reliability and efficiency. My experience at organizations like <strong className="bg-green_A200_dd text-gray-900 px-0.5 mx-0.5">Microsoft and Kfin Technologies</strong>, as well as with startups, has shaped my ability to blend technical expertise with problem-solving to deliver real value.
-            </span>
-            {/* <span className="block my-4">
-              At Microsoft, I contributed to the Microsoft To-Do web app,
-              enhancing user experience and performance. At Kofuku Idea Labs, I
-              improved user experience in a Case Management Software by
-              implementing bulk invite functionality and efficient case
-              filtering.
-            </span> */}
-            <span className="block my-4">
-              Beyond coding, I believe in writing modular, maintainable code and contributing to products that improve how people work. I’m constantly learning, exploring new technologies, and refining my craft to stay ahead in the fast-changing tech space.
-            </span>
-          </Typography>
-          {/* <Typography
-            className="font-semibold mt-[22px] text-justify text-white_A700 w-full"
-            variant="body"
-          >
-            <span className="sm:text-[21px] text-white_A700 text-xl font-montserrat">
-              Interests:{" "}
-            </span>
-            <span className="sm:text-[21px] text-white_A700 font-montserrat font-normal">
-              Reading Books, Playing Games Online, Engaging with communities.
-            </span>
-          </Typography> */}
+  return <section id="about" className="section-padding bg-[#0f0f0f]">
+    <div className="container-max grid items-center gap-12 md:grid-cols-[minmax(230px,.72fr)_1.28fr]">
+      <div className="relative mx-auto w-full max-w-sm animate-[fadeInUp_.7s_ease_both]">
+        <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#55bb97]/40 to-[#1fbabf]/15 blur-xl" />
+        <img src={profilePic} alt="Arpit Ghura" className="relative aspect-[4/5] w-full rounded-[1.5rem] border border-white/15 object-cover shadow-2xl" />
+      </div>
+      <div className="reveal visible">
+        <p className="text-sm font-bold uppercase tracking-[.2em] text-[#55bb97]">A little about me</p>
+        <h2 className="mt-3 font-spartan text-4xl font-bold text-[#f0f0f0] sm:text-5xl">Engineering with clarity and care.</h2>
+        <div className="section-title-line w-36" />
+        <div className="mt-7 space-y-5 text-base leading-8 text-[#a0a0a0]">
+          <p>I&apos;m Arpit Ghura, a software engineer who turns complex product requirements into <mark className="rounded bg-[#55bb97]/15 px-1.5 py-0.5 font-semibold text-[#83e0bf]">clean, scalable experiences</mark>.</p>
+          <p>I work across modern web technologies including React, Next.js, and Node.js, with experience building enterprise-grade collaboration and case management tools.</p>
+          <p>From product thinking to polished implementation, I care about the details that make a digital product feel <mark className="rounded bg-[#1fbabf]/15 px-1.5 py-0.5 font-semibold text-[#70e5e8]">simple, useful, and dependable</mark>.</p>
         </div>
       </div>
     </div>
-  );
+  </section>;
 };
 
 export default About;
