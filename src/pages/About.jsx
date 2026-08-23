@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { client, urlFor } from "../utils/sanityClient";
+import { fetchAbout } from "../api/fetchAbout";
+import { urlFor } from "../utils/sanityClient";
 
 const About = () => {
   const [summary, setSummary] = useState(null);
-  useEffect(() => { client.fetch('*[_type == "summary"][0]').then(setSummary).catch(console.error); }, []);
+  useEffect(() => { fetchAbout().then(setSummary).catch(console.error); }, []);
   const profilePic = summary?.profilePic ? urlFor(summary.profilePic).width(900).url() : "images/arpit.png";
 
   return <section id="about" className="section-padding bg-[#0f0f0f]">

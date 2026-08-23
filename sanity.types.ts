@@ -58,21 +58,16 @@ export type SanityImageHotspot = {
   width?: number;
 };
 
-export type Skill = {
+export type Skillcategory = {
   _id: string;
-  _type: "skill";
+  _type: "skillcategory";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  name?: string;
-  category?: string;
-  icon?: {
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
+  categoryName?: string;
+  categoryId?: string;
+  skills?: Array<string>;
+  isHidden?: boolean;
 };
 
 export type Education = {
@@ -149,6 +144,8 @@ export type Project = {
   };
   projectUrl?: string;
   githubUrl?: string;
+  imageAlt?: string;
+  tags?: Array<string>;
   category?: string;
 };
 
@@ -293,5 +290,23 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImageAssetReference | Achievement | SanityImageCrop | SanityImageHotspot | Skill | Education | Experience | Project | SanityFileAssetReference | Summary | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
-
+export type AllSanitySchemaTypes =
+  | SanityImageAssetReference
+  | Achievement
+  | SanityImageCrop
+  | SanityImageHotspot
+  | Skillcategory
+  | Education
+  | Experience
+  | Project
+  | SanityFileAssetReference
+  | Summary
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityImageMetadata
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
+  | Geopoint
+  | Slug;

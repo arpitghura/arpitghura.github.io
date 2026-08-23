@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Icon } from "../components";
-import { client } from "../utils/sanityClient";
+import { fetchAbout } from "../api/fetchAbout";
 
 const Contact = () => {
   const [postData, setPostData] = useState({ name: "", email: "", message: "" });
   const [message, setMessage] = useState("");
   const [summary, setSummary] = useState(null);
-  useEffect(() => { client.fetch('*[_type == "summary"][0]').then(setSummary).catch(console.error); }, []);
+  useEffect(() => { fetchAbout().then(setSummary).catch(console.error); }, []);
   const handleChange = (event) => setPostData({ ...postData, [event.target.name]: event.target.value });
   const handleSubmitForm = async (event) => {
     event.preventDefault();

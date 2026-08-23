@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowAnim, Icon } from "../components";
-import { client } from "../utils/sanityClient";
+import { fetchAbout } from "../api/fetchAbout";
 
 const socialLinks = [
   ["linkedin", "linkedIn", "LinkedIn"], ["github", "gitHub", "GitHub"], ["x", "twitter", "X"], ["youtube", "youTube", "YouTube"],
@@ -8,7 +8,7 @@ const socialLinks = [
 
 const Hero = () => {
   const [summary, setSummary] = useState(null);
-  useEffect(() => { client.fetch('*[_type == "summary"][0]').then(setSummary).catch(console.error); }, []);
+  useEffect(() => { fetchAbout().then(setSummary).catch(console.error); }, []);
   const role = summary?.role || "Software Engineer";
 
   return <section id="home" className="hero-mesh relative flex min-h-screen items-center overflow-hidden px-5 pt-24">
@@ -31,7 +31,7 @@ const Hero = () => {
         <a className="btn-outline inline-flex items-center gap-2" href="#contact">Start a conversation <Icon name="arrowRight" className="h-4 w-4" /></a>
       </div>
     </div>
-    <a href="#about" aria-label="Scroll to about section" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#55bb97] motion-safe:animate-bounce"><ArrowAnim /></a>
+    <a href="#about" aria-label="Scroll to about section" className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[#55bb97] motion-safe:animate-bounce"><ArrowAnim /></a>
   </section>;
 };
 
