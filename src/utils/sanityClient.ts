@@ -1,5 +1,5 @@
 import { createClient } from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder } from '@sanity/image-url'
 
 export const client = createClient({
   projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
@@ -8,7 +8,7 @@ export const client = createClient({
   useCdn: true, // fast, cached reads for published content
 })
 
-export const callQuery = async (datatype) => {
+export const callQuery = async (datatype: string) => {
   try {
     const response = await client.fetch(`*[_type == "${datatype}"]`);
     return response;
@@ -20,8 +20,8 @@ export const callQuery = async (datatype) => {
 }
 
 // Helper: build optimised image URLs from Sanity image assets
-const builder = imageUrlBuilder(client)
+const builder = createImageUrlBuilder(client)
 
-export function urlFor(source) {
+export function urlFor(source: Parameters<typeof builder.image>[0]) {
   return builder.image(source)
 }
