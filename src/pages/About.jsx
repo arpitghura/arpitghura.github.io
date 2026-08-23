@@ -19,7 +19,7 @@ const About = () => {
         <div className="section-title-line w-36" />
         <div className="mt-7 space-y-5 text-base leading-8 text-[#a0a0a0]">
           <p>I&apos;m Arpit Ghura, a software engineer who turns complex product requirements into <mark className="rounded bg-[#55bb97]/15 px-1.5 py-0.5 font-semibold text-[#83e0bf]">clean, scalable experiences</mark>.</p>
-          <p>I work across modern web technologies including React, Next.js, and Node.js, with experience building enterprise-grade collaboration and case management tools.</p>
+          <p>I work across modern web technologies including Java, Spring Boot, React, and Node.js, with experience building enterprise-grade applications.</p>
           <p>From product thinking to polished implementation, I care about the details that make a digital product feel <mark className="rounded bg-[#1fbabf]/15 px-1.5 py-0.5 font-semibold text-[#70e5e8]">simple, useful, and dependable</mark>.</p>
         </div>
       </div>
